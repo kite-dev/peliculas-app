@@ -7,7 +7,7 @@
       </div>
       <div class="col">
         <select name="best" id="best" [(ngModel)]="best" class="form-control" (change)="goToBest()">
-          <option value="0">Mejores en</option>
+          <option value="0">Mejor evaluados en</option>
           <option *ngFor="let year of years" [value]="year">{{year}}</option>
         </select>
       </div>
