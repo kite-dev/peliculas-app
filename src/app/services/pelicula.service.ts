@@ -5,7 +5,7 @@ import { HttpClientJsonpModule, HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PeliculasService {
-  private apikey = 'e63cd344cba788cb0f38206562ccbc88';
+  private apikey = 'a148cc4f39867bcf08174d57044234c0';
   private urlMoviedb = 'https://api.themoviedb.org/3';
 
   constructor(
