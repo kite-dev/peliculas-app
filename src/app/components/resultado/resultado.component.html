@@ -1,0 +1,19 @@
+<div class="card-columns animated fadeIn slow col">
+    <div class="card bg-light text-black pointer col-md-11" *ngFor="let movie of movies | slice:0:9" (click)="movieDetails(movie)">
+      <img *ngIf="movie.poster_path; else noImage" src="{{imageBaseUrl}}{{movie.poster_path}}" class="card-img-top"  alt="{{movie.title}}">
+      <ng-template #noImage>
+        <h5 class="ml-3 mt-3">{{movie.title}}</h5>
+      </ng-template>
+      <div class="card-body card-img-overlay" [ngClass]="{ 'show': movie.show_stats, 'hide': !movie.show_stats }"
+        (mouseenter)="hoverItem(movie)" (mouseleave)="hoverItem(movie)">
+        <p class="card-text">
+          <span class="badge badge-info">Popularidad: {{movie.popularity}}</span> <br>
+          <span class="badge badge-info">Votos: {{movie.vote_count}}</span>
+        </p>
+      </div>
+      <div class="card-body">
+        <p class="card-text text-justify">{{movie.overview.substr(0,100)}}{{"..."}}</p>
+        <p class="card-text"><small class="text-muted">{{movie.release_date | date: 'dd-MM-yyyy'}}</small></p>
+      </div>
+    </div>
+  </div>
